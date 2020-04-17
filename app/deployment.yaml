@@ -1,0 +1,28 @@
+apiVersion: ext/v1beta1
+kind: Deployment
+metadata:
+  name: kube-for-app
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      run: kube-for-app
+  template:
+    metadata:
+      labels:
+        run: kube-for-app
+    spec:
+      containers:
+      - image: nginx:latest // start app1 from this image
+        imagePullPolicy: IfNotPresent
+        name: kube-for-app
+        ports:
+        - containerPort: 80
+          protocol: TCP
+
+      - image: nginx:latest // start app2 from this image
+        imagePullPolicy: IfNotPresent
+        name: kube-for-app
+        ports:
+        - containerPort: 80
+          protocol: TCP
