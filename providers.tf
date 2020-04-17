@@ -1,18 +1,32 @@
 # Configure the GitHub Provider
-provider "github" {
-	token        = "${var.github_token}"
-	organization = "${var.github_organization}"
-	//individual = false
+#provider "github" {
+#	token        = "${var.github_token}"
+#	organization = "${var.github_organization}"	
+#}
+provider "google" {
+	  project = var.project
+	  region  = var.region_type
+	  credentials = var.credentials_file_path
+}
+provider "kubernetes" {
+  load_config_file = "false"
+
+  host = "https://104.196.242.174"
+
+  username = "username"
+  password = "password"
 }
 
-provider "azurerm" {
-    # The "feature" block is required for AzureRM provider 2.x. 
-    # If you're using version 1.x, the "features" block is not allowed.
-    version = "~>2.0"
-    features {}
-    
-    subscription_id = var.subscription_id //xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-    client_id       = var.client_id
-    client_secret   = var.client_secret
-    tenant_id       = var.tenant_id
-}
+#provider "kubernetes" {
+  
+ # host = "https://104.196.242.174"
+
+  #client_certificate     = "~/.kube/client-cert.pem" //?
+  #client_key             = "~/.kube/client-key.pem"
+  #cluster_ca_certificate = "~/.kube/cluster-ca-cert.pem"
+
+  #load_config_file = false    # when you wish not to load the local config file
+#}
+
+
+

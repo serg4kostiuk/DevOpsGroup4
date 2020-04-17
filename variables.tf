@@ -1,38 +1,35 @@
-variable "github_token" {
-	description = " used token to access github"
-	type = string	
-	//default = "./keys.json"
-}
-
 variable "github_organization" {
 	type = string	
 	default = "DevOpsStudies"
 }
- variable "subscription_id" { 	//xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+variable "credentials_file_path" {
 	type = string
+	description = "1-st way"
+	default = "f:/DevOps/Terraform/.gcloud/juice-shop-project-8f42062baada.json"
 }
-    variable "client_id" {
+variable "name" {
 	type = string
+ 	default = "cluster-4-team"
 }
-    variable "client_secret"{
+variable "project" {
 	type = string
+        default = "juice-shop-project" // what project I should choose
 }
-    variable "tenant_id"{
+
+variable "region_type" {
 	type = string
+  	default = "europe-west6"
 }
-variable "a_r_g" {
+
+variable "init_node_count" {
+  	default = 1
+}
+
+variable "machine_type" {
 	type = string
-	default = "ResourceGroup4"
+	default = "e2-standard-4" //"n1-standard-1"  
 }
-variable "environment" {
-	type = string
-	default = "DevOpsTeam_4"
-}
-variable "net_sec_group" {
-	type = string 
-	default = "ONSG"
-}
-variable "n_i_c" {
-	type = string
-	default = "NIC4Group"
+variable "github_token" {
+	description = " used token to access github"
+	type = string	
 }

@@ -1,6 +1,6 @@
 #resource "github_repository" "group4" {
 #	name = "KubeCluster"
- #      	description  = "RepoForKubeService"
+#      	description  = "RepoForKubeService"
 #	private = false
 #	auto_init = true
 #}
@@ -28,7 +28,7 @@ resource "google_container_node_pool" "default" {
   project     = "${var.project}"
   location   = "${var.region_type}"
   cluster    = "${google_container_cluster.default.name}"
-  node_count = 3
+  node_count = 1
 
   node_config {
     preemptible  = true
