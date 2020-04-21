@@ -23,7 +23,7 @@ variable "init_node_count" {
 
 variable "machine_type" {
 	type = string
-	default = "e2-standard-4" //"n1-standard-1"  
+	default = "e2-standard-2" //"n1-standard-1"  
 }
 variable "github_token" {
 	description = " used token to access github"

@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kube-for-app
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      run: kube-for-app
+  template:
+    metadata:
+      labels:
+        run: kube-for-app
+    spec:
+      containers:
+      - image: eu.gcr.io/juice-shop-project/nginx:v1
+        imagePullPolicy: IfNotPresent
+        name: kube-for-app
+        ports:
+        - containerPort: 80
+          protocol: TCP
+
+      - image: tomcat:8.5.54
+        imagePullPolicy: IfNotPresent
+        name: env-for-app
+        ports:
+        - containerPort: 8090
+          protocol: TCP
