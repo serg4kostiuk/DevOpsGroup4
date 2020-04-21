@@ -1,8 +1,9 @@
-apiVersion: ext/v1beta1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: kube-for-app-ingress
+  namespace: default
 spec:
   backend:
-    serviceName: kube-for-app //like a demo
+    serviceName: kube-for-app
     servicePort: 80

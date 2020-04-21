@@ -1,4 +1,4 @@
-apiVersion: ext/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: kube-for-app
@@ -13,16 +13,16 @@ spec:
         run: kube-for-app
     spec:
       containers:
-      - image: nginx:latest // start app1 from this image
+      - image: eu.gcr.io/juice-shop-project/nginx:v1
         imagePullPolicy: IfNotPresent
         name: kube-for-app
         ports:
         - containerPort: 80
           protocol: TCP
 
-      - image: nginx:latest // start app2 from this image
+      - image: tomcat:8.5.54
         imagePullPolicy: IfNotPresent
-        name: kube-for-app
+        name: env-for-app
         ports:
-        - containerPort: 80
+        - containerPort: 8090
           protocol: TCP
