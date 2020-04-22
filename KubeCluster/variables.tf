@@ -9,7 +9,7 @@ variable "project" {
 
 variable "region_type" {
 	type = string
-  	default = "europe-west6"
+  	default = "europe-west1"
 }
 
 variable "init_node_count" {
@@ -18,7 +18,7 @@ variable "init_node_count" {
 
 variable "machine_type" {
 	type = string
-	default = "e2-standard-2" //"n1-standard-1"
+	default = "n1-standard-1" //"n1-standard-1"
 }
 variable "github_token" {
 	description = " used token to access github"
