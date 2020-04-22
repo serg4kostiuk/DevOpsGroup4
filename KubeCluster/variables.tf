@@ -1,15 +1,10 @@
-variable "credentials_file_path" {
-	type = string
-	description = "1-st way"
-	default = "f:/DevOps/Terraform/.gcloud/juice-shop-project-8f42062baada.json"
-}
 variable "name" {
 	type = string
  	default = "cluster-4-team"
 }
 variable "project" {
 	type = string
-        default = "juice-shop-project" // what project I should choose
+        default = "devops-274919" // what project I should choose
 }
 
 variable "region_type" {
@@ -23,9 +18,9 @@ variable "init_node_count" {
 
 variable "machine_type" {
 	type = string
-	default = "e2-standard-2" //"n1-standard-1"  
+	default = "e2-standard-2" //"n1-standard-1"
 }
 variable "github_token" {
 	description = " used token to access github"
-	type = string	
+	type = string
 }

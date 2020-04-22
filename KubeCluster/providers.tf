@@ -1,12 +1,12 @@
 # Configure the GitHub Provider
 #provider "github" {
 #	token        = "${var.github_token}"
-#	organization = "${var.github_organization}"	
+#	organization = "${var.github_organization}"
 #}
 provider "google" {
 	  project = var.project
 	  region  = var.region_type
-	  credentials = var.credentials_file_path
+	  credentials = file("DevOps-c672af380b15.json")
 }
 provider "kubernetes" {
   load_config_file = "false"
@@ -18,7 +18,7 @@ provider "kubernetes" {
 }
 
 #provider "kubernetes" {
-  
+
  # host = "https://104.196.242.174"
 
   #client_certificate     = "~/.kube/client-cert.pem" //?
